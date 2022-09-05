@@ -32,7 +32,6 @@ while (fiveRandomNumbers.length < 5){
     //PRENDO UN NUMERO RANDOM
     const randomNumber = getRandomNumbersUntilMax(50)
 
-
     //SE NON è PRESENTE NELL'ARRAY 
     if(!fiveRandomNumbers.includes(randomNumber)){
 
@@ -47,9 +46,14 @@ console.log(fiveRandomNumbers)
 
 //con un altro ciclo stamperò i numeri random
 for(i = 0; i < fiveRandomNumbers.length; i++){
-
+    
+    //viene creato un elemento
     const pElementHTML = document.createElement('p')
+    
+    //viene inserito all'interno il valore
     pElementHTML.innerHTML = fiveRandomNumbers[i]
+    
+    //l'elemento (p) viene inserito nell'html
     containerHTML.append(pElementHTML)
 
 }
@@ -64,6 +68,9 @@ setTimeout(function(){
 
 //vengono chiesti 5 numeri
 //il prompt verrà ciclato per 5 volte e i numeri verranno pushati in un array vuoto
+
+const userNumbers = setTimeout(getUserNumbers, 30000)
+
 
 //vengono inseriti in un array
 
@@ -91,3 +98,26 @@ function getRandomNumbersUntilMax(max){
     return number
 
 }
+
+//FUNZIONE CHE CHIEDE I NUMERI ALL'UTENTE
+function getUserNumbers(){
+
+    const userNumbers = []
+    
+    while (userNumbers.length < 5){
+    
+        //PRENDO UN NUMERO INSERITO DELL'UTENTE
+        const userNumb = parseInt(prompt('Inserisci il numero'))
+    
+        //SE è UN NUMERO  
+        if(!isNaN(userNumb)){
+    
+            //LO INSERISCO
+            userNumbers.push(userNumb)
+        }else{
+            alert('inserisci un numero')
+        }
+    }
+
+    console.log(userNumbers)
+};
