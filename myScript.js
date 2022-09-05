@@ -21,7 +21,7 @@ Consigli del giorno:
 
 //vengono generati 5 numeri random
 const containerHTML = document.querySelector('.col-12.d-flex.justify-content-between.py-5')
-
+const disappearNumbers = document.getElementById('timerNumberDisappear')
 //CREO UN ARRAY VUOTO
 const fiveRandomNumbers = []
 
@@ -54,8 +54,13 @@ for(i = 0; i < fiveRandomNumbers.length; i++){
 
 }
 
-
 //dopo 30 secondi i numeri scompaiono
+
+setTimeout(function(){
+
+    disappearNumbers.classList.add('d-none')
+
+}, 30000);
 
 //vengono chiesti 5 numeri
 //il prompt verrà ciclato per 5 volte e i numeri verranno pushati in un array vuoto
