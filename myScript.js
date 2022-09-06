@@ -45,7 +45,7 @@ console.log(fiveRandomNumbers)
 
 
 //con un altro ciclo stamperò i numeri random
-for(i = 0; i < fiveRandomNumbers.length; i++){
+for(let i = 0; i < fiveRandomNumbers.length; i++){
     
     //viene creato un elemento
     const pElementHTML = document.createElement('p')
@@ -72,13 +72,11 @@ setTimeout(function(){
 const userNumbers = setTimeout(getUserNumbers, 30000)
 
 
+
+
 //vengono inseriti in un array
 
-//i due array vengono confrontati
 
-//tramite un counter verrà tenuto il conto dei numeri indovinati
-
-//vengono stampati i numeri uguali
 
 
 
@@ -120,4 +118,23 @@ function getUserNumbers(){
     }
 
     console.log(userNumbers)
+//i due array vengono confrontati
+ 
+ for(let i = 0; i<=5; i++){
+debugger
+    if(fiveRandomNumbers[i] === userNumbers[i]){
+        console.log('hai indovinato il numero:', userNumbers[i])
+    }
+    else{
+        let count = 0
+        count++
+        console.log('Hai sbagliato')
+    }
+
+ }
 };
+
+
+//tramite un counter verrà tenuto il conto dei numeri indovinati
+
+//vengono stampati i numeri uguali
