@@ -41,7 +41,7 @@ while (fiveRandomNumbers.length < 5){
 }
 
 //vengono visualizzati i numeri dell'array
-console.log(fiveRandomNumbers)
+console.log('i numeri generati random sono', fiveRandomNumbers)
 
 
 //con un altro ciclo stamperò i numeri random
@@ -69,7 +69,7 @@ setTimeout(function(){
 //vengono chiesti 5 numeri
 //il prompt verrà ciclato per 5 volte e i numeri verranno pushati in un array vuoto
 
-const userNumbers = setTimeout(getUserNumbers, 30000)
+const userNumbers = setTimeout(getUserNumbers, 30200)
 
 
 
@@ -117,24 +117,24 @@ function getUserNumbers(){
         }
     }
 
-    console.log(userNumbers)
+    console.log('i numeri dell\'user sono:', userNumbers)
 //i due array vengono confrontati
+let count = 0
  
- for(let i = 0; i<=5; i++){
+ for(let i = 0; i<5; i++){
 debugger
     if(fiveRandomNumbers[i] === userNumbers[i]){
+        //vengono stampati i nuemri indovinati
         console.log('hai indovinato il numero:', userNumbers[i])
     }
     else{
-        let count = 0
+        //tramite un counter verrà tenuto il conto dei numeri sbagliati
         count++
-        console.log('Hai sbagliato')
     }
-
  }
+ console.log('Hai sbagliato', count, 'numeri')
 };
 
 
-//tramite un counter verrà tenuto il conto dei numeri indovinati
 
 //vengono stampati i numeri uguali
